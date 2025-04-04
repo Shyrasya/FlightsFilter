@@ -6,15 +6,17 @@ import java.util.Objects;
 
 /**
  * Сегмент перелета
+ *
  * @param departureDate время отправления
- * @param arrivalDate время прибытия
+ * @param arrivalDate   время прибытия
  */
 public record Segment(LocalDateTime departureDate, LocalDateTime arrivalDate) {
 
     /**
      * Компактный конструктор класса {@link Segment}
+     *
      * @param departureDate время отправления, не может быть null
-     * @param arrivalDate время прибытия, не может быть null
+     * @param arrivalDate   время прибытия, не может быть null
      * @throws NullPointerException если любой из параметров равен null
      */
     public Segment {
