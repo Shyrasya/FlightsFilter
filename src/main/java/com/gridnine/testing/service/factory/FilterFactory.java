@@ -1,6 +1,9 @@
 package com.gridnine.testing.service.factory;
 
-import com.gridnine.testing.service.filter.*;
+import com.gridnine.testing.service.filter.ArrivalBeforeDepartureFilter;
+import com.gridnine.testing.service.filter.DepartureBeforeNowFilter;
+import com.gridnine.testing.service.filter.FlightFilter;
+import com.gridnine.testing.service.filter.TotalHoursTransfersFilter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,11 +33,7 @@ public class FilterFactory {
 
         filtersWithParams.put("TotalHoursTransfersFilter", param -> {
             if (param != null && !param.isEmpty()) {
-                try {
-                    return new TotalHoursTransfersFilter(Double.parseDouble(param));
-                } catch (NumberFormatException e) {
-                    return null;
-                }
+                return new TotalHoursTransfersFilter(Double.parseDouble(param));
             }
             return new TotalHoursTransfersFilter();
         });
