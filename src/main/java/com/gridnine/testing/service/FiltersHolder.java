@@ -2,11 +2,16 @@ package com.gridnine.testing.service;
 
 import com.gridnine.testing.model.Flight;
 import com.gridnine.testing.service.factory.FilterFactory;
-import com.gridnine.testing.service.filter.*;
+import com.gridnine.testing.service.filter.ArrivalBeforeDepartureFilter;
+import com.gridnine.testing.service.filter.DepartureBeforeNowFilter;
+import com.gridnine.testing.service.filter.FlightFilter;
+import com.gridnine.testing.service.filter.TotalHoursTransfersFilter;
 
-
-import java.io.*;
-import java.util.HashSet;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -24,7 +29,7 @@ public class FiltersHolder {
     /**
      * Набор фильтров для применения
      */
-    private final Set<FlightFilter> filters = new HashSet<>();
+    private final Set<FlightFilter> filters = new LinkedHashSet<>();
 
     /**
      * Конструктор класса FiltersHolder (приватный для реализации Singleton)
@@ -96,12 +101,14 @@ public class FiltersHolder {
      *
      * @param inputStream поток ввода для чтения фильтров из файла
      */
-    public void getFiltersFromFile(InputStream inputStream) {
+    public void getFiltersFromStream(InputStream inputStream) {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 line = line.trim();
-                if (line.isEmpty() || line.startsWith("#")) continue;
+                if (line.isEmpty() || line.startsWith("#")) {
+                    continue;
+                }
                 String[] parts = line.split("\\s+", 2);
                 String filterName = parts[0];
                 String param = (parts.length > 1) ? parts[1] : null;
@@ -115,5 +122,14 @@ public class FiltersHolder {
         } catch (IOException e) {
             System.out.println("Error reading file: " + e.getMessage());
         }
+    }
+
+    /**
+     * Получение списка фильтров, установленных в класс {@link FiltersHolder}
+     *
+     * @return список уникальных фильтров
+     */
+    public Set<FlightFilter> getFilters() {
+        return filters;
     }
 }
