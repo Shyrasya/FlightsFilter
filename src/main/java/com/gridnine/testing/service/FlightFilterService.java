@@ -93,7 +93,7 @@ public class FlightFilterService {
     }
 
     private static void printFilters(Set<FlightFilter> filters) {
-        System.out.println("Filters set:");
+        System.out.println("\nFilters set:");
         filters.forEach(filter -> System.out.println(filter.getClass().getSimpleName()));
     }
 
