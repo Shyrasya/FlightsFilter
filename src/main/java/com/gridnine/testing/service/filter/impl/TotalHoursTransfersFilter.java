@@ -1,7 +1,8 @@
-package com.gridnine.testing.service.filter;
+package com.gridnine.testing.service.filter.impl;
 
 import com.gridnine.testing.model.Flight;
 import com.gridnine.testing.model.Segment;
+import com.gridnine.testing.service.filter.base.FlightFilter;
 
 import java.time.Duration;
 import java.util.List;

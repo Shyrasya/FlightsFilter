@@ -1,9 +1,9 @@
 package com.gridnine.testing.service.factory;
 
-import com.gridnine.testing.service.filter.ArrivalBeforeDepartureFilter;
-import com.gridnine.testing.service.filter.DepartureBeforeNowFilter;
-import com.gridnine.testing.service.filter.FlightFilter;
-import com.gridnine.testing.service.filter.TotalHoursTransfersFilter;
+import com.gridnine.testing.service.filter.impl.ArrivalBeforeDepartureFilter;
+import com.gridnine.testing.service.filter.impl.DepartureBeforeNowFilter;
+import com.gridnine.testing.service.filter.base.FlightFilter;
+import com.gridnine.testing.service.filter.impl.TotalHoursTransfersFilter;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

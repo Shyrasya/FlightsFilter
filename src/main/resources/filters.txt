@@ -1,0 +1,2 @@
+TotalHoursTransfersFilter 3
+DepartureBeforeNowFilter

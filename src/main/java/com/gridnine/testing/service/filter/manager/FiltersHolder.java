@@ -1,11 +1,11 @@
-package com.gridnine.testing.service;
+package com.gridnine.testing.service.filter.manager;
 
 import com.gridnine.testing.model.Flight;
 import com.gridnine.testing.service.factory.FilterFactory;
-import com.gridnine.testing.service.filter.ArrivalBeforeDepartureFilter;
-import com.gridnine.testing.service.filter.DepartureBeforeNowFilter;
-import com.gridnine.testing.service.filter.FlightFilter;
-import com.gridnine.testing.service.filter.TotalHoursTransfersFilter;
+import com.gridnine.testing.service.filter.impl.ArrivalBeforeDepartureFilter;
+import com.gridnine.testing.service.filter.impl.DepartureBeforeNowFilter;
+import com.gridnine.testing.service.filter.base.FlightFilter;
+import com.gridnine.testing.service.filter.impl.TotalHoursTransfersFilter;
 
 import java.io.BufferedReader;
 import java.io.IOException;
