@@ -68,8 +68,8 @@ public class Main {
 	*Тестовая фильтрация*
 	</div>
 
-* Помимо вывода в консоль список готовых отфильтрованных полетов можно получить другим методом сервиса: `public static List<Flight> getFilteredFlights(String filtersFile, String flightsFile)`.
-* В `FiltersHolder` есть возможность добавления и удаления имеющихся в модуле фильтров `public void addFilter(FlightFilter filter), public void removeFilter(FlightFilter filter)`.
+* Помимо вывода в консоль список готовых отфильтрованных полетов можно получить другим методом сервиса: `getFilteredFlights(String filtersFile, String flightsFile)`.
+* В `FiltersHolder` есть возможность добавления и удаления имеющихся в модуле фильтров `addFilter(FlightFilter filter), removeFilter(FlightFilter filter)`.
 * Для того, чтобы создать новый фильтр, необходимо добавить новый класс в `src/main/java/com/gridnine/testing/service/filter/impl`, а также добавить его в поле фабрики `FilterFactory`.
 
 ## Сборка
